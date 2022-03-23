@@ -4,24 +4,40 @@ class User_controller extends CI_Controller{
 		parent::__construct();
 	}
 
-	public function login($username,$password) {
-		$this->load->model('../models/user_model.php');
-		$result = $this->user_model->login_check($username,$password);
-		if($result == 1){
-			include_once('../views/homepage.php');
+	public function index(){
+		$this->load->view('login');
+	}
+	
+	public function login($username = '', $password = '') {
+		error_reporting(0);
+		$username = $_GET['name'];
+		$password = $_GET['password'];
+		if($username != NULL || $password != NULL){
+			$this->load->model('user_model');
+			$check = $this->user_model->login_check($username,$password);
+			if($check == 0){
+				$this->load->view('error_and_return');
+			} else {
+				$this->load->view('homepage');
+			}
 		} else {
-			include_once('../views/errors/');
+			$this->load->view('error_and_return');
 		}
 	}
 
-	public function register($username='',$password = '', $fullname = '',$email = '',$phone = '')
+	public function register()
 	{
-		$this->load->model('../models/user_model.php');
-		if(register($username='',$password = '', $fullname = '',$email = '',$phone = '')){
-			include_once('../views/login.php');
-		} else {
-			
-		}
+		$this->load->view('register');
+	}
+	public function register_handle(){
+		$this->load->model('user_model');
+		$username = $_POST['name'];
+		$password = $_POST['password'];
+		$email = $_POST['email'];
+		$fullname = $_POST['fullname'];
+		$phone = $_POST['phone'];
+		$result = $this->user_model->user_register($username,$password,$fullname,$email,$phone);
+		header('Location:../user_controller');	
 	}
 }
 ?>
