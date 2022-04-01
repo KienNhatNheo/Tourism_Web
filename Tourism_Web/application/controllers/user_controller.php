@@ -10,14 +10,15 @@ class User_controller extends CI_Controller{
 	
 	public function login($username = '', $password = '') {
 		error_reporting(0);
-		$username = $_GET['name'];
-		$password = $_GET['password'];
+		$username = $_POST['name'];
+		$password = $_POST['password'];
 		if($username != NULL || $password != NULL){
 			$this->load->model('user_model');
 			$check = $this->user_model->login_check($username,$password);
 			if($check == 0){
 				$this->load->view('error_and_return');
 			} else {
+
 				$this->load->view('homepage');
 			}
 		} else {

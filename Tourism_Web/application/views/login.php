@@ -51,7 +51,7 @@
           transform: translateY(-24px);
 }
 .contact-form .label {
-  position: absolute;
+  /*position: absolute;*/
   left: 20px;
   bottom: 11px;
   font-size: 18px;
@@ -81,15 +81,17 @@
 <body>
 	<section class="get-in-touch">
    	<h1 class="title">Login</h1>
-		<form action="user_controller/login" class="contact-form row" method="get">
+		<form action="user_controller/login" class="contact-form row" method="post">
 	      <div class="form-field col-lg-8">
+          <label class="label" for="name">Username :</label>
 	         <input id="name" class="input-text js-input" type="text" name="name">
-	         <label class="label" for="name">Username :</label>
+	         
 	      </div>
 	      <br>
 	      <div class="form-field col-lg-8 ">
+          <label class="label" for="password">Password :</label>
 	         <input id="password" class="input-text js-input" type="password" name="password">
-	         <label class="label" for="password">Password :</label>
+	         
 	      </div>
 	      <div style="display: flex;justify-content:right;">	
 	     	 <div class="form-field col-lg-12">
@@ -97,7 +99,7 @@
 	      	</div>
 	      </div>
 	    </form>
-	    <div style="text-align: center;font-size: 20px;">Bạn chưa có tài khoản? <a href="user_controller/register" style="color: blue;text-decoration: none;font-weight: bold;">Vượng ăn buồi</a></div>
+	    <div style="text-align: center;font-size: 20px;">Bạn chưa có tài khoản? <a href="user_controller/register" style="color: blue;text-decoration: none;font-weight: bold;">Đăng ký ngay</a></div>
     </section>
 </body>
 </html>
