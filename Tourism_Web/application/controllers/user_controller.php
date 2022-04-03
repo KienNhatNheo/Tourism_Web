@@ -18,8 +18,10 @@ class User_controller extends CI_Controller{
 			if($check == 0){
 				$this->load->view('error_and_return');
 			} else {
-
-				$this->load->view('homepage');
+				$this->load->model('product');
+				$dssp = $this->product->return_data_tour();
+				$data['ds'] = $dssp;
+				$this->load->view('homepage', $data);
 			}
 		} else {
 			$this->load->view('error_and_return');

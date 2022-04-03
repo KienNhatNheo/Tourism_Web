@@ -21,7 +21,8 @@
     <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url('assets/css/owl.carousel.min.css');?>">
     <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url('assets/css/slicknav.min.css');?>">
 </head>
-  <?php include_once('css/homepage.css'); ?>
+
+<?php include_once('css/homepage.css'); ?>
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
@@ -95,7 +96,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                                <li><i class="fa fa-envelope"></i>KienNhatNheo</li>
                                 <li>Free Shipping for all Order of $99</li>
                             </ul>
                         </div>
@@ -284,9 +285,13 @@
                 </div>
             </div>
             <div class="row featured__filter">
-                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+              <?php
+                  foreach($ds as $item){
+                     echo'<div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                  
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-1.jpg">
+                        <div class="featured__item__pic set-bg">
+                            <img src='.$item->tour_image.'>
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -294,11 +299,14 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
+                            <h6><a href="#">'.$item->tour_name.'</a></h6>
+                            <h5>'.$item->tour_price.'</h5>
                         </div>
                     </div>
-                </div>
+                </div>'; 
+                  }
+                 ?>
+                
                 <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-2.jpg">
@@ -311,6 +319,7 @@
                         <div class="featured__item__text">
                             <h6><a href="#">Crab Pool Security</a></h6>
                             <h5>$30.00</h5>
+                            <h5>hsdaskdasjdkasdask</h5>
                         </div>
                     </div>
                 </div>
