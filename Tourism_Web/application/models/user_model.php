@@ -36,13 +36,111 @@ class User_model extends CI_Model{
 		else return 0;
 	}
 
-	//Trả về thông tin người dùng theo trường
-	public function getDetail_user($user_id = '', $field = ''){
-		$query = $this->db->get_where('user_table',array('user_id' => $user_id ));
-		$execute = $this->db->query($query); 
+	
+	//Trả về thông tin chuyến đi
+	public function tour_detail($tour_id){
+		$query = $this->db->query('select * from tour where tour_id = '.$tour_id);
+		return $query->result();
+	}
+	
+	
+	//Trả về id của người dùng
+	public function get_user_id(){
+		$query = $this->db->query("select user_id from user_table where username = '".$_SESSION['name']."'");
+		return $query->result();
 	}
 
+	//Đăng ký chuyến đi
+	public function tour_register($tour_id){
+		$date = date('d/m/Y');
+		$query = $this->db->query("select user_id from user_table where username = '".$_SESSION['name']."'");
+		foreach($query->result() as $item){
+			$query1 = $this->db->query('select tour_startday from tour where tour_id ='.$tour_id);
+			foreach($query1->result() as $item1){
+			$query2 = $this->db->query("insert into  tour_history(user_id,tour_id,tour_startday,order_time) values (".$item->user_id.",".$tour_id.",'".$item1->tour_startday."','".$date."')");
+			$query3 = $this->db->query('select * from tour where tour_id = '.$tour_id);
+			return $query3->result();
+			}
+		}	
+	}
 
-	
+	//Trả về danh sách người dùng theo id
+	public function return_username_byid($user_id){
+		$query = $this->db->query('select fullname from user_table where user_id='.$user_id);
+		return $query->result();
+	}
+
+	//Trả về bình luận của người dùng về chuyến đi theo id
+	public function return_comment($tour_id){
+		$query = $this->db->query('select * from tour_rating where tour_id ='.$tour_id);
+		return $query->result();
+	}
+
+	//Thêm bình luận về chuyến đi
+	public function add_tour_comment($tour_id,$comment){
+		$query = $this->db->query("select user_id from user_table where username = '".$_SESSION['name']."'");
+		foreach($query->result() as $item){
+			$sql = "insert into tour_rating(tour_id,user_id,username,rate,comment) values (".$tour_id.",".$item->user_id.",'".$_SESSION['name']."',3.4,'".$comment."')";
+			$query1 = $this->db->query($sql);
+		}
+		header('Location:javascript:history.go(-1)');
+	}
+
+	//Thêm đóng góp cho người phát triển
+	public function add_contribution($contribution){
+		$query = $this->db->query("select user_id from user_table where username = '".$_SESSION['name']."'");
+		$date = date('d/m/Y');
+		foreach($query->result() as $item){
+			$sql = "insert into contributor(user_id,content,content_time) values (".$item->user_id.",'".$contribution."','".$date."')";
+			$query1 = $this->db->query($sql);
+		}
+		header('Location:javascript:history.go(-1)');
+	}
+
+	//Trả về thông tin người dùng hiện thời
+	public function user_detail(){
+		$query = $this->db->query("select user_id from user_table where username = '".$_SESSION['name']."'");
+		foreach($query->result() as $item){
+			$query1 = $this->db->query("select * from user_table where user_id = ".$item->user_id);
+			return $query1->result();
+		}
+	}
+
+	//Cập nhật thông tin người dùng
+	public function update_user_detail($fullname,$email,$phone){
+		$query = $this->db->query("update user_table set fullname = '".$fullname."', email = '".$email."', phone = '".$phone."' WHERE username = '".$_SESSION['name']."'");
+	}
+
+	//So sánh mật khẩu cũ để đổi mật khẩu 
+	public function pass_compare($pass){
+		$query = $this->db->query("select * from user_table where username = '".$_SESSION['name']."'");
+		foreach ($query->result() as $key){
+			if($key->password == $pass){
+				return 1;
+			} else {
+				return 0;
+			}
+		}
+	}
+
+	//Cập nhật mật khẩu mới
+	public function update_new_pass($new_pass){
+		$query = $this->db->query("update user_table set password = '".$new_pass."' where username = '".$_SESSION['name']."'");
+	}
+
+	//Trả về lịch sử chuyến đi của người dùng
+	public function return_tour_history(){
+		$query = $this->db->query("select user_id from user_table where username = '".$_SESSION['name']."'");
+		foreach($query->result() as $item){
+			$query1 = $this->db->query("select th.tour_id,th.tour_startday,th.order_time,t.tour_name from tour_history as th, tour as t where th.user_id = ".$item->user_id." and t.tour_id = th.tour_id");
+			return $query1->result();
+		}
+	}
+
+	//Tìm kiếm nơi bắt đầu
+	public function search_start_place($place){
+		$query = $this->db->query("select * from tour where tour_route like '".$place."%'");
+		return $query->result();
+	}
 }
 ?>
