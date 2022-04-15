@@ -41,8 +41,8 @@
                         <li><a href="./blog-details.html">Blog Details</a></li>
                     </ul>
                 </li>
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="user_controller/history">History</a></li>
+                <li><a href="user_controller/contact_button">Contact</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -109,7 +109,7 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li class="active"><a href="../user_controller/home">Home</a></li>
                             <li><a href="./shop-grid.html">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
@@ -119,13 +119,18 @@
                                     <li><a href="./blog-details.html">Blog Details</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="../../user_controller/contact">Contact</a></li>
+                            <li><a href="../user_controller/history">History</a></li>
+                            <li><a href="../user_controller/contact">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
-                <div class="col-lg-3">
-                    
+                <div class="col-lg-3" style="margin-top:1rem;">
+                    <div class="hero__search__phone__icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="hero__search__phone__text">
+                                <a href="../user_controller/user_detail" style="text-decoration: none;color: black;"><?php echo 'Welcome '.$_SESSION['name']; ?></a>
+                            </div>
                 </div>
             </div>
             <div class="humberger__open">
@@ -163,12 +168,8 @@
                 <div class="col-lg-9">
                     <div class="hero__search">
                         <div class="hero__search__form">
-                            <form action="#">
-                                <div class="hero__search__categories">
-                                    All Categories
-                                    <span class="arrow_carrot-down"></span>
-                                </div>
-                                <input type="text" placeholder="What do yo u need?">
+                            <form action="../user_controller/search_start_place" method="post">
+                                <input type="text" placeholder="What do you need?" name="place_search">
                                 <button type="submit" class="site-btn">SEARCH</button>
                             </form>
                         </div>
