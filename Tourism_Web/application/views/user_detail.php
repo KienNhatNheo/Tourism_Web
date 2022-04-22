@@ -188,7 +188,7 @@
     <!-- Hero Section End -->
 
     <!-- Breadcrumb Section Begin -->
-    <div style="text-align: center;font-size: 30px;margin-top: 30px;margin-bottom: 30px;">Bạn đã đăng ký thành công!<br></div>
+    <div style="text-align: center;font-size: 30px;margin-top: 30px;margin-bottom: 30px;">THÔNG TIN NGƯỜI DÙNG<br></div>
     <?php foreach($user_detail as $item){ ?>
         <div style="display: flex;margin-left: 12.5%;margin-right: 12.5%;margin-bottom: 30px;">
             <div>

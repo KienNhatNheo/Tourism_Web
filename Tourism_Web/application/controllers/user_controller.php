@@ -12,16 +12,18 @@ class User_controller extends CI_Controller{
 		error_reporting(0);
 		$username = $_POST['name'];
 		$password = $_POST['password'];
+		$this->load->model('user_model');
 		if($username != NULL || $password != NULL){
-			$this->load->model('user_model');
 			$check = $this->user_model->login_check($username,$password);
 			if($check == 0){
 				$this->load->view('error_and_return');
-			} else {
+			} else if($check == 1){
 				$this->load->model('product');
 				$dssp = $this->product->return_data_tour();
 				$data['ds'] = $dssp;
 				$this->load->view('homepage', $data);
+			} else {
+				$this->load->view('admin/header');
 			}
 		} else {
 			$this->load->view('error_and_return');
@@ -39,8 +41,14 @@ class User_controller extends CI_Controller{
 		$email = $_POST['email'];
 		$fullname = $_POST['fullname'];
 		$phone = $_POST['phone'];
-		$result = $this->user_model->user_register($username,$password,$fullname,$email,$phone);
-		header('Location:../user_controller');	
+		$check_username = $this->user_model->check_username($username);
+		if($check_username == FALSE){
+			$result = $this->user_model->user_register($username,$password,$fullname,$email,$phone);
+			header('Location:../user_controller');	
+		} else {
+			$this->load->view('error_and_return');
+		}
+			
 	}
 	
 	public function contact(){
@@ -100,7 +108,9 @@ class User_controller extends CI_Controller{
 		$phone = $_POST['phone'];
 		$this->load->model('user_model');
 		$this->user_model->update_user_detail($fullname,$email,$phone);
-		header('Location:javascript:history.go(-1)');
+		$user_detail = $this->user_model->user_detail();
+		$data['user_detail']  = $user_detail;
+		$this->load->view('user_detail', $data);
 	}
 
 	public function change_password(){
@@ -136,7 +146,11 @@ class User_controller extends CI_Controller{
 		$this->load->model('user_model');
 		$list_place = $this->user_model->search_start_place($place_key);
 		$data1['place_key'] = $place_key;
-		$data2['place'] = $list_place;
+		if($list_place != null){
+			$data2['place'] = $list_place;
+		} else {
+			$data2['place'] = null;
+		}
 		$this->load->view('search_head');
 		$this->load->view('search_title', $data1);
 		$this->load->view('search_result', $data2);

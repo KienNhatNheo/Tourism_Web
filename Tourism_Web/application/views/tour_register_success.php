@@ -38,8 +38,8 @@
                         <li><a href="./blog-details.html">Blog Details</a></li>
                     </ul>
                 </li>
-                <li><a href="user_controller/history">History</a></li>
-                <li><a href="user_controller/contact_button">Contact</a></li>
+                <li><a href="history">History</a></li>
+                <li><a href="contact_button">Contact</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -116,8 +116,8 @@
                                     <li><a href="./blog-details.html">Blog Details</a></li>
                                 </ul>
                             </li>
-                            <li><a href="../user_controller/history">History</a></li>
-                            <li><a href="../user_controller/contact">Contact</a></li>
+                            <li><a href="../history">History</a></li>
+                            <li><a href="../contact">Contact</a></li>
                         </ul>
                     </nav>
 

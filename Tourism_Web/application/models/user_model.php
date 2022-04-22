@@ -20,10 +20,23 @@ class User_model extends CI_Model{
 		$query = mysqli_query($conn,"select * from user_table where username = '".$username."'");
 		$row = mysqli_fetch_array($query);
 		if($password == $row['password']){
+			if($row['role'] == 1){
+				return 2;
+			}
 			$_SESSION['name'] = $username;
 			return 1;
 		}else{
 			return 0;
+		}
+	}
+
+	//Kiểm tra xem tên người dùng tồn tại hay chưa
+	public function check_username($username){
+		$query = $this->db->query("select * from user_table where username ='".$username."'");
+		if($query->result() == null){
+			return false;
+		} else {
+			return true;
 		}
 	}
 
@@ -139,7 +152,7 @@ class User_model extends CI_Model{
 
 	//Tìm kiếm nơi bắt đầu
 	public function search_start_place($place){
-		$query = $this->db->query("select * from tour where tour_route like '".$place."%'");
+		$query = $this->db->query("select * from tour where tour_route like '%".$place."'");
 		return $query->result();
 	}
 }
