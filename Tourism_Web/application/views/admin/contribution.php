@@ -1,4 +1,4 @@
-<div style="margin-left: 350px;">
+<div style="display: flex;justify-content: center;">
 	<table style="margin-top: 40px; border-collapse: collapse;width: 50%;" border="1">
 	<tr style="padding:5px">
 		<th style="padding:5px">Tên Người Dùng</th>

@@ -23,11 +23,19 @@ class User_model extends CI_Model{
 			if($row['role'] == 1){
 				return 2;
 			}
+			if ($row['user_enable'] != 1) {
+			return 3;
+			}
 			$_SESSION['name'] = $username;
 			return 1;
 		}else{
 			return 0;
 		}
+	}
+
+	//Kiểm tra xem tài khoản người dùng có được kích hoạt hay chưa
+	public function check_enable(){
+
 	}
 
 	//Kiểm tra xem tên người dùng tồn tại hay chưa
@@ -43,7 +51,7 @@ class User_model extends CI_Model{
 	//Đăng ký người dùng
 	public function user_register($username='',$password = '', $fullname = '',$email = '',$phone = ''){
 		$conn = mysqli_connect('localhost','root','','tourism_web');
-		$query = "insert into user_table(username,password,fullname,email,phone,role) values ('".$username."','".$password."','".$fullname."','".$email."','".$phone."',2)";
+		$query = "insert into user_table(username,password,fullname,email,phone,role,user_enable) values ('".$username."','".$password."','".$fullname."','".$email."','".$phone."',2,1)";
 		$result = mysqli_query($conn,$query);
 		if($result) return 1;
 		else return 0;
@@ -93,7 +101,7 @@ class User_model extends CI_Model{
 	public function add_tour_comment($tour_id,$comment){
 		$query = $this->db->query("select user_id from user_table where username = '".$_SESSION['name']."'");
 		foreach($query->result() as $item){
-			$sql = "insert into tour_rating(tour_id,user_id,username,rate,comment) values (".$tour_id.",".$item->user_id.",'".$_SESSION['name']."',3.4,'".$comment."')";
+			$sql = "insert into tour_rating(tour_id,user_id,username,comment) values (".$tour_id.",".$item->user_id.",'".$_SESSION['name']."','".$comment."')";
 			$query1 = $this->db->query($sql);
 		}
 		header('Location:javascript:history.go(-1)');

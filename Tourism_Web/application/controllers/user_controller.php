@@ -22,8 +22,10 @@ class User_controller extends CI_Controller{
 				$dssp = $this->product->return_data_tour();
 				$data['ds'] = $dssp;
 				$this->load->view('homepage', $data);
-			} else {
+			} else if($check == 2){
 				$this->load->view('admin/header');
+			} else {
+				$this->load->view('alert_account_lock');
 			}
 		} else {
 			$this->load->view('error_and_return');

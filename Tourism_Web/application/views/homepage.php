@@ -260,9 +260,9 @@
             <div class="row featured__filter">
               <?php
                   foreach($ds as $item){
+                    if($item->tour_display == 1){
                      echo'<div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
-                  
-                    <div class="featured__item">
+                        <div class="featured__item">
                         <div class="featured__item__pic set-bg">
                             <img src='.$item->tour_image.'>
                             <ul class="featured__item__pic__hover">
@@ -275,9 +275,10 @@
                             <h6><a href="../user_controller/tour_detail/'.$item->tour_id.'">'.$item->tour_name.'</a></h6>
                             <h5>'.$item->tour_price.'</h5>
                         </div>
-                    </div>
-                </div>'; 
-                  }
+                        </div>
+                     </div>'; 
+                    }
+                }
                  ?>
                 
                
