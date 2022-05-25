@@ -164,5 +164,23 @@ class User_controller extends CI_Controller{
 		$data['ds'] = $dssp;
 		$this->load->view('homepage', $data);
 	}
+
+	public function tour_rate($tour_id){
+		$this->load->model('user_model');
+		$tour_data = $this->user_model->return_tourname($tour_id);
+		$data['tour_data'] = $tour_data;
+		$this->load->view('tour_rate', $data);
+	}
+
+
+	public function tour_rate_handle(){
+		$point = $_POST['rate_point'];
+		$feedback = $_POST['feedback'];
+		$tour_id = $_POST['tour_id'];
+		$this->load->model('user_model');
+		$bool = $this->user_model->add_rate($tour_id,$point,$feedback);
+		$data['bool'] = $bool;
+		$this->load->view('add_rate_result', $data);
+	}
 }
 ?>

@@ -196,7 +196,8 @@
                         <th style="padding:10px">Tên chuyến đi</th>
                         <th style="padding:10px">Thời gian khởi hành</th>
                         <th style="padding:10px">Thời gian đăng ký</th>
-                        <th style="padding:10px"></th>
+                        <th style="padding:10px">Xem chi tiết</th>
+                        <th style="padding:10px">Đánh giá</th> 
                     </tr>
                 <?php foreach ($tour_history as $item) {
                     echo '<tr>
@@ -204,6 +205,7 @@
                             <td style="padding:10px">'.$item->tour_startday.'</td>
                             <td style="padding:10px">'.$item->order_time.'</td>
                             <td style="padding:10px"><a href="tour_detail/'.$item->tour_id.'">Xem chi tiết</a></td>
+                            <td style="padding:10px"><a href="tour_rate/'.$item->tour_id.'">Đánh giá</a></td>
                         </tr>';
                 }?>
                </table>

@@ -163,5 +163,33 @@ class User_model extends CI_Model{
 		$query = $this->db->query("select * from tour where tour_route like '%".$place."'");
 		return $query->result();
 	}
+
+	//Đăng xuất
+	public function logout(){
+		session_start();
+		session_destroy();
+	}
+
+	public function return_tourname($tour_id){
+		$query = $this->db->query("select * from tour where tour_id =".$tour_id);
+		return $query->result();
+	}
+
+	public function add_rate($tour_id,$point, $feedback){
+		if($point >= 0.0  && $point <= 5.0 && $tour_id != null && $point != null && $feedback != null){
+			$query = $this->db->query("select user_id from user_table where username = '".$_SESSION['name']."'");
+			foreach($query->result() as $item){
+				$query1 = $this->db->query("insert into tour_rating values(".$item->user_id.",".$tour_id.",".$point.",'".$feedback."')");
+
+				$query2 = $this->db->query("select AVG(rating) as avg_rate from tour_rating where tour_id = ".$tour_id);
+				foreach($query2->result() as $item1){
+					$query3 = $this->db->query("update tour set tour_rate = ".$item1->avg_rate." where tour_id = ".$tour_id);
+				}
+				return 1;
+			}	
+		}
+		return 0;
+		
+	}
 }
 ?>
