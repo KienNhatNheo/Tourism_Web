@@ -19,7 +19,7 @@ class User_model extends CI_Model{
 		$conn = mysqli_connect('localhost','root','','tourism_web');
 		$query = mysqli_query($conn,"select * from user_table where username = '".$username."'");
 		$row = mysqli_fetch_array($query);
-		if($password == $row['password']){
+		if(sha1($password) == $row['password']){
 			if($row['role'] == 1){
 				return 2;
 			}
@@ -51,7 +51,7 @@ class User_model extends CI_Model{
 	//Đăng ký người dùng
 	public function user_register($username='',$password = '', $fullname = '',$email = '',$phone = ''){
 		$conn = mysqli_connect('localhost','root','','tourism_web');
-		$query = "insert into user_table(username,password,fullname,email,phone,role,user_enable) values ('".$username."','".$password."','".$fullname."','".$email."','".$phone."',2,1)";
+		$query = "insert into user_table(username,password,fullname,email,phone,role,user_enable) values ('".$username."','".sha1($password)."','".$fullname."','".$email."','".$phone."',2,1)";
 		$result = mysqli_query($conn,$query);
 		if($result) return 1;
 		else return 0;

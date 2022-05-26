@@ -32,7 +32,7 @@ class Admin_model extends CI_Model{
 	}
 
 	public function user_manager_showuser(){
-		$query = $this->db->query('select * from user_table');
+		$query = $this->db->query('select * from user_table where role = 2');
 		return $query->result();
 	}
 
