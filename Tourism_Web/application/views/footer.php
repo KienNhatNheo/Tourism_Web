@@ -1,3 +1,6 @@
+<head>
+    <title>Tourism_Web</title>
+</head>
 <footer class="footer spad">
         <div class="container">
             <div class="row">

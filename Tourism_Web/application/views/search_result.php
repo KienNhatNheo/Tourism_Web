@@ -1,3 +1,6 @@
+<head>
+    <title>Tourism_Web</title>
+</head>
 <div style="margin-left: 12.5%;margin-bottom: 3rem;margin-top: 2rem;">
 	 <table border="1" style="width:500px;background-color: rgb(216, 216, 216);">
                     

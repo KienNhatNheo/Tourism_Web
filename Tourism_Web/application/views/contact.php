@@ -1,6 +1,6 @@
 <?php include_once('header.php');?>
 <head>
-      <title>Kiên VIP</title>
+    <title>Tourism_Web</title>
 </head>
 <body>
     <!-- Page Preloder -->
@@ -26,21 +26,13 @@
                 </ul>
             </div>
             <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i> Login</a>
+                <a href="../user_controller"><i class="fa fa-user"></i>Logout</a>
             </div>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
                 <li class="active"><a href="./index.html">Home</a></li>
                 <li><a href="./shop-grid.html">Shop</a></li>
-                <li><a href="#">Pages</a>
-                    <ul class="header__menu__dropdown">
-                        <li><a href="./shop-details.html">Shop Details</a></li>
-                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                        <li><a href="./checkout.html">Check Out</a></li>
-                        <li><a href="./blog-details.html">Blog Details</a></li>
-                    </ul>
-                </li>
                 <li><a href="user_controller/history">History</a></li>
                 <li><a href="user_controller/contact_button">Contact</a></li>
             </ul>
@@ -92,7 +84,7 @@
                                 </ul>
                             </div>
                             <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
+                                <a href="../user_controller"><i class="fa fa-user"></i>Logout</a>
                             </div>
                         </div>
                     </div>
@@ -111,14 +103,6 @@
                         <ul>
                             <li class="active"><a href="../user_controller/home">Home</a></li>
                             <li><a href="./shop-grid.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
                             <li><a href="../user_controller/history">History</a></li>
                             <li><a href="../user_controller/contact">Contact</a></li>
                         </ul>

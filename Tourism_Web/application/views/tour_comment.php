@@ -1,3 +1,6 @@
+<head>
+    <title>Tourism_Web</title>
+</head>
 <div>
 	<table style="margin-left: 12.5%;margin-top: 1rem;margin-bottom: 1rem">
 	<?php 

@@ -19,6 +19,9 @@
     <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url('assets/css/jquery-ui.min.css');?>">
     <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url('assets/css/owl.carousel.min.css');?>">
     <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url('assets/css/slicknav.min.css');?>">
+
+    <title>Tourism_Web</title>
+
 </head>
 
 <?php include_once('css/homepage.css'); ?>
