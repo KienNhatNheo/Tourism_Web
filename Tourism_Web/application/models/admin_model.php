@@ -44,5 +44,9 @@ class Admin_model extends CI_Model{
 		$query = $this->db->query('update user_table set user_enable = 1 where user_id ='.$user_id);
 	}
 
+	public function tour_feedback($tour_id){
+		$query = $this->db->query("select u.username, u.fullname,t.tour_name, tr.rating, tr.feedback from user_table as u, tour_rating as tr, tour as t where tr.user_id = u.user_id and tr.tour_id = t.tour_id and tr.tour_id = ".$tour_id);
+		return $query->result();
+	}
 }																					
 ?> 

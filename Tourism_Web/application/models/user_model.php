@@ -188,8 +188,22 @@ class User_model extends CI_Model{
 				return 1;
 			}	
 		}
-		return 0;
-		
+		return 0;	
+	}
+
+	public function search_hanoi(){
+		$query = $this->db->query("select * from tour where tour_route like '%Hà Nội'");
+		return $query->result();
+	}
+
+	public function search_tphcm(){
+		$query = $this->db->query("select * from tour where tour_route like '%TP.Hồ Chí Minh'");
+		return $query->result();
+	}
+
+	public function search_danang(){
+		$query = $this->db->query("select * from tour where tour_route like '%Đà Nẵng'");
+		return $query->result();
 	}
 }
 ?>

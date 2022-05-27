@@ -84,5 +84,13 @@ class Admin_controller extends CI_Controller{
 		$this->admin_model->user_enable($user_id);
 		header('Location:javascript:history.go(-1)');
 	}
+
+	public function tour_feedback($tour_id){
+		$this->load->model('admin_model');
+		$tour_feedback = $this->admin_model->tour_feedback($tour_id);
+		$data['tour_feedback'] = $tour_feedback;
+		$this->load->view('admin/tour_feedback', $data);
+	}
+
 }
 ?>

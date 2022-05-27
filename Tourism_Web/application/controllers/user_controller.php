@@ -182,5 +182,54 @@ class User_controller extends CI_Controller{
 		$data['bool'] = $bool;
 		$this->load->view('add_rate_result', $data);
 	}
+
+	public function search_hanoi(){
+		$this->load->model('user_model');
+		$result = $this->user_model->search_hanoi();
+		$data1['place_key'] = 'Hà Nội';
+		if($result != null){
+			$data2['place'] = $result;
+		} else {
+			$data2['place'] = null;
+		}
+		$this->load->view('search_head');
+		$this->load->view('search_title', $data1);
+		$this->load->view('search_result', $data2);
+	}
+
+	public function search_tphcm(){
+		$this->load->model('user_model');
+		$result = $this->user_model->search_tphcm();
+		$data1['place_key'] = 'TP.Hồ Chí Minh';
+		if($result != null){
+			$data2['place'] = $result;
+		} else {
+			$data2['place'] = null;
+		}
+		$this->load->view('search_head');
+		$this->load->view('search_title', $data1);
+		$this->load->view('search_result', $data2);
+	}
+
+	public function search_danang(){
+		$this->load->model('user_model');
+		$result = $this->user_model->search_danang();
+		$data1['place_key'] = 'Đà Nẵng';
+		if($result != null){
+			$data2['place'] = $result;
+		} else {
+			$data2['place'] = null;
+		}
+		$this->load->view('search_head');
+		$this->load->view('search_title', $data1);
+		$this->load->view('search_result', $data2);
+	}
+
+	public function all_tour(){
+		$this->load->model('product');
+		$result = $this->product->all_tour();
+		$data['ds'] = $result;
+		$this->load->view('more_tour', $data);
+	}
 }
 ?>

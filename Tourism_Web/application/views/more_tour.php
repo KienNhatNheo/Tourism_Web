@@ -108,8 +108,8 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="../user_controller/all_tour">More Tour</a></li>
+                            <li ><a href="./index.html">Home</a></li>
+                            <li class="active"><a href="../user_controller/all_tour">More Tour</a></li>
                             <li><a href="../user_controller/history">History</a></li>
                             <li><a href="../user_controller/contact">Contact</a></li>
                         </ul>
@@ -223,7 +223,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Các tour nổi bật</h2>
+                        <h2>Các tour mới nhất</h2>
                     </div>
                     
                 </div>
