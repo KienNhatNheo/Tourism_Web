@@ -93,7 +93,7 @@ class User_model extends CI_Model{
 
 	//Trả về bình luận của người dùng về chuyến đi theo id
 	public function return_comment($tour_id){
-		$query = $this->db->query('select * from tour_rating where tour_id ='.$tour_id);
+		$query = $this->db->query('select * from tour_comment where tour_id ='.$tour_id);
 		return $query->result();
 	}
 
@@ -101,7 +101,7 @@ class User_model extends CI_Model{
 	public function add_tour_comment($tour_id,$comment){
 		$query = $this->db->query("select user_id from user_table where username = '".$_SESSION['name']."'");
 		foreach($query->result() as $item){
-			$sql = "insert into tour_rating(tour_id,user_id,username,comment) values (".$tour_id.",".$item->user_id.",'".$_SESSION['name']."','".$comment."')";
+			$sql = "insert into tour_comment(tour_id,user_id,username,comment) values (".$tour_id.",".$item->user_id.",'".$_SESSION['name']."','".$comment."')";
 			$query1 = $this->db->query($sql);
 		}
 		header('Location:javascript:history.go(-1)');
@@ -136,7 +136,7 @@ class User_model extends CI_Model{
 	public function pass_compare($pass){
 		$query = $this->db->query("select * from user_table where username = '".$_SESSION['name']."'");
 		foreach ($query->result() as $key){
-			if($key->password == $pass){
+			if($key->password == sha1($pass)){
 				return 1;
 			} else {
 				return 0;
@@ -146,7 +146,7 @@ class User_model extends CI_Model{
 
 	//Cập nhật mật khẩu mới
 	public function update_new_pass($new_pass){
-		$query = $this->db->query("update user_table set password = '".$new_pass."' where username = '".$_SESSION['name']."'");
+		$query = $this->db->query("update user_table set password = '".sha1($new_pass)."' where username = '".$_SESSION['name']."'");
 	}
 
 	//Trả về lịch sử chuyến đi của người dùng
@@ -192,17 +192,17 @@ class User_model extends CI_Model{
 	}
 
 	public function search_hanoi(){
-		$query = $this->db->query("select * from tour where tour_route like '%Hà Nội'");
+		$query = $this->db->query("select * from tour where tour_route like '%Hà Nội%'");
 		return $query->result();
 	}
 
 	public function search_tphcm(){
-		$query = $this->db->query("select * from tour where tour_route like '%TP.Hồ Chí Minh'");
+		$query = $this->db->query("select * from tour where tour_route like '%Hồ Chí Minh%'");
 		return $query->result();
 	}
 
 	public function search_danang(){
-		$query = $this->db->query("select * from tour where tour_route like '%Đà Nẵng'");
+		$query = $this->db->query("select * from tour where tour_route like '%Đà Nẵng%'");
 		return $query->result();
 	}
 }

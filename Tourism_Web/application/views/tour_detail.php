@@ -60,10 +60,6 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="header__top__left">
-                            <ul>
-                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                                <li>Free Shipping for all Order of $99</li>
-                            </ul>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -84,7 +80,7 @@
                                 </ul>
                             </div>
                             <div class="header__top__right__auth">
-                                <a href="../user_controller"><i class="fa fa-user"></i>Logout</a>
+                                <a href="../../user_controller"><i class="fa fa-user"></i>Logout</a>
                             </div>
                         </div>
                     </div>
@@ -102,16 +98,16 @@
                     <nav class="header__menu">
                         <ul>
                             <li class="active"><a href="../home">Home</a></li>
-                            <li><a href="./shop-grid.html">Shop</a></li>
-                            <li><a href="../user_controller/history">History</a></li>
-                            <li><a href="../user_controller/contact">Contact</a></li>
+                            <li><a href="../all_tour">More Tour</a></li>
+                            <li><a href="../history">History</a></li>
+                            <li><a href="../contact">Contact</a></li>
                         </ul>
                     </nav>
 
                 </div>
                 <div class="col-lg-3" style="margin-top:1rem;">
                     <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
+                                <img src="https://get.pxhere.com/photo/avatar-people-person-business-user-man-character-set-icon-portrait-office-profile-pictograph-social-adult-suit-technology-individual-head-face-design-concept-emblem-symbol-smile-formal-elements-facial-expression-cartoon-male-forehead-cheek-chin-human-behavior-standing-gentleman-businessperson-mouth-clip-art-communication-conversation-public-speaking-finger-illustration-facial-hair-happiness-organization-graphics-1447663.jpg">
                             </div>
                             <div class="hero__search__phone__text">
                                 <a href="../user_detail" style="text-decoration: none;color: black;"><?php echo 'Welcome '.$_SESSION['name']; ?></a>
@@ -133,7 +129,7 @@
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
-                            <span>All departments</span>
+                            <span>Featured destination</span>
                         </div>
                         <ul>
                             <li><a href="#">Fresh Meat</a></li>
@@ -153,19 +149,10 @@
                 <div class="col-lg-9">
                     <div class="hero__search">
                         <div class="hero__search__form">
-                            <form action="../user_controller/search_start_place" method="post">
+                            <form action="../search_start_place" method="post">
                                 <input type="text" placeholder="What do you need?" name="place_search">
                                 <button type="submit" class="site-btn">SEARCH</button>
                             </form>
-                        </div>
-                        <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
-                            </div>
                         </div>
                     </div>
                 </div>

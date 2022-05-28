@@ -60,10 +60,6 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="header__top__left">
-                            <ul>
-                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                                <li>Free Shipping for all Order of $99</li>
-                            </ul>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -84,7 +80,7 @@
                                 </ul>
                             </div>
                             <div class="header__top__right__auth">
-                                <a href="../user_controller"><i class="fa fa-user"></i>Logout</a>
+                                <a href="../../user_controller"><i class="fa fa-user"></i>Logout</a>
                             </div>
                         </div>
                     </div>
@@ -101,8 +97,8 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="../user_controller/home">Home</a></li>
-                            <li><a href="./shop-grid.html">Shop</a></li>
+                            <li class="active"><a href="../home">Home</a></li>
+                            <li><a href="../all_tour">More Tour</a></li>
                             <li><a href="../history">History</a></li>
                             <li><a href="../contact">Contact</a></li>
                         </ul>
@@ -111,10 +107,10 @@
                 </div>
                 <div class="col-lg-3" style="margin-top:1rem;">
                     <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
+                                <img src="https://get.pxhere.com/photo/avatar-people-person-business-user-man-character-set-icon-portrait-office-profile-pictograph-social-adult-suit-technology-individual-head-face-design-concept-emblem-symbol-smile-formal-elements-facial-expression-cartoon-male-forehead-cheek-chin-human-behavior-standing-gentleman-businessperson-mouth-clip-art-communication-conversation-public-speaking-finger-illustration-facial-hair-happiness-organization-graphics-1447663.jpg">
                             </div>
                             <div class="hero__search__phone__text">
-                                <a href="../user_controller/user_detail" style="text-decoration: none;color: black;"><?php echo 'Welcome '.$_SESSION['name']; ?></a>
+                                <a href="../user_detail" style="text-decoration: none;color: black;"><?php echo 'Welcome '.$_SESSION['name']; ?></a>
                             </div>
                 </div>
             </div>
@@ -133,7 +129,7 @@
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
-                            <span>All departments</span>
+                            <span>Featured destination</span>
                         </div>
                         <ul>
                             <li><a href="#">Fresh Meat</a></li>
@@ -153,19 +149,10 @@
                 <div class="col-lg-9">
                     <div class="hero__search">
                         <div class="hero__search__form">
-                            <form action="../user_controller/search_start_place" method="post">
+                            <form action="../search_start_place" method="post">
                                 <input type="text" placeholder="What do you need?" name="place_search">
                                 <button type="submit" class="site-btn">SEARCH</button>
                             </form>
-                        </div>
-                        <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -220,7 +207,7 @@
     </div>
     <?php } ?>
     <!-- Footer Section Begin -->
-    <footer class="footer spad">
+        <footer class="footer spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
@@ -229,9 +216,9 @@
                             <a href="./index.html"><img src="img/logo.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello@colorlib.com</li>
+                            <li>Address:Phenikaa University, Yen Nghia, Ha Dong</li>
+                            <li>Phone: +84912345678</li>
+                            <li>Email: Phenikaa@gmail.com</li>
                         </ul>
                     </div>
                 </div>
@@ -258,17 +245,16 @@
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <div class="footer__widget">
-                        <h6>Join Our Newsletter Now</h6>
+                        <h6>Join Our Tourism Now</h6>
                         <p>Get E-mail updates about our latest shop and special offers.</p>
                         <form action="#">
                             <input type="text" placeholder="Enter your mail">
                             <button type="submit" class="site-btn">Subscribe</button>
                         </form>
                         <div class="footer__widget__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <a href="https://www.facebook.com/"><i class="fa fa-facebook">f</i></a>
+                            <a href="https://www.google.com/"><i class="fa fa-instagram">g+</i></a>
+                            <a href="https://twitter.com"><i class="fa fa-twitter">tw</i></a>
                         </div>
                     </div>
                 </div>

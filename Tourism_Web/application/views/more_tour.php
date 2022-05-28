@@ -66,12 +66,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <div class="header__top__left">
-                            <ul>
-                                <li><i class="fa fa-envelope"></i>KienNhatNheo</li>
-                                <li>Free Shipping for all Order of $99</li>
-                            </ul>
-                        </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__right">
@@ -108,7 +102,7 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li ><a href="./index.html">Home</a></li>
+                            <li ><a href="../user_controller/home">Home</a></li>
                             <li class="active"><a href="../user_controller/all_tour">More Tour</a></li>
                             <li><a href="../user_controller/history">History</a></li>
                             <li><a href="../user_controller/contact">Contact</a></li>
@@ -117,7 +111,7 @@
                 </div>
                 <div class="col-lg-3" style="margin-top:1rem;">
                     <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
+                                <img src="https://get.pxhere.com/photo/avatar-people-person-business-user-man-character-set-icon-portrait-office-profile-pictograph-social-adult-suit-technology-individual-head-face-design-concept-emblem-symbol-smile-formal-elements-facial-expression-cartoon-male-forehead-cheek-chin-human-behavior-standing-gentleman-businessperson-mouth-clip-art-communication-conversation-public-speaking-finger-illustration-facial-hair-happiness-organization-graphics-1447663.jpg">
                             </div>
                             <div class="hero__search__phone__text">
                                 <a href="../user_controller/user_detail" style="text-decoration: none;color: black;"><?php echo 'Welcome '.$_SESSION['name']; ?></a>
@@ -140,7 +134,7 @@
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
-                            <span>Điểm đến hứa hẹn</span>
+                            <span>Featured destination</span>
                         </div>
                         <ul>
                             <li><a href="../user_controller/search_hanoi">Hà Nội</a></li>
@@ -157,22 +151,11 @@
                                 <button type="submit" class="site-btn">SEARCH</button>
                             </form>
                         </div>
-                        <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
-                            </div>
-                        </div>
                     </div>
-                    <div class="hero__item set-bg" data-setbg="img/hero/banner.jpg">
-                        <div class="hero__text">
-                            <span>FRUIT FRESH</span>
-                            <h2>Vegetable <br />100% Organic</h2>
-                            <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
+                    <div data-setbg="img/hero/banner.jpg">
+                        <img style="width: 71.7%; padding-bottom: 10px;" src="https://dulichviet.com.vn/images/bandidau/images/TIN%20T%E1%BB%A8C%20DLV/2017/BAN%20TIN%20DU%20LICH%20VIET/khuyen-mai-du-lich-mua-thu_du-lich-viet.jpg">
+                        <div class="hero__text" style="margin-left: 27.5%;">
+                            <a href="../user_controller/all_tour" class="primary-btn">SHOP NOW</a>
                         </div>
                     </div>
                 </div>
@@ -234,13 +217,17 @@
                     if($item->tour_display == 1){
                      echo'<div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                         <div class="featured__item">
-                        <div class="featured__item__pic set-bg">
-                            <img src='.$item->tour_image.'>
-                          
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="../user_controller/tour_detail/'.$item->tour_id.'">'.$item->tour_name.'</a></h6>
-                            <h5>'.$item->tour_price.'</h5>
+                        <div style="background-color:rgb(216,216,216); padding-bottom:10px; border:1px gray solid;">
+                            <div class="featured__item__pic set-bg">
+                                <img style="height:250px; border-bottom:1px gray solid;" src='.$item->tour_image.'>
+                              
+                            </div>
+                            <div class="featured__item__text">
+                                <h6><b><a href="../user_controller/tour_detail/'.$item->tour_id.'">'.$item->tour_name.'</a></b></h6>
+                                <h5 style="color:red">Giá tiền: '.$item->tour_price.' VNĐ</h5>
+                                <h5>Đánh giá: '.round($item->tour_rate,1).'/5</h5>
+
+                            </div>
                         </div>
                         </div>
                      </div>'; 
@@ -274,7 +261,7 @@
     <!-- Banner End -->
 
     <!-- Latest Product Section Begin -->
-    <section class="latest-product spad">
+<!--    <section class="latest-product spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
@@ -474,11 +461,11 @@
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Latest Product Section End -->
+    </section> -->
+    <!-- Latest Product Section End --> 
 
     <!-- Blog Section Begin -->
-    <section class="from-blog spad">
+<!--    <section class="from-blog spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -535,7 +522,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
     <!-- Blog Section End -->
 
     <!-- Footer Section Begin -->
@@ -548,9 +535,9 @@
                             <a href="./index.html"><img src="img/logo.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello@colorlib.com</li>
+                            <li>Address:Phenikaa University, Yen Nghia, Ha Dong</li>
+                            <li>Phone: +84912345678</li>
+                            <li>Email: Phenikaa@gmail.com</li>
                         </ul>
                     </div>
                 </div>
@@ -577,17 +564,16 @@
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <div class="footer__widget">
-                        <h6>Join Our Newsletter Now</h6>
+                        <h6>Join Our Tourism Now</h6>
                         <p>Get E-mail updates about our latest shop and special offers.</p>
                         <form action="#">
                             <input type="text" placeholder="Enter your mail">
                             <button type="submit" class="site-btn">Subscribe</button>
                         </form>
                         <div class="footer__widget__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <a href="https://www.facebook.com/"><i class="fa fa-facebook">f</i></a>
+                            <a href="https://www.google.com/"><i class="fa fa-instagram">g+</i></a>
+                            <a href="https://twitter.com"><i class="fa fa-twitter">tw</i></a>
                         </div>
                     </div>
                 </div>

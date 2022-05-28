@@ -67,10 +67,6 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
-                            <ul>
-                                <li><i class="fa fa-envelope"></i>KienNhatNheo</li>
-                                <li>Free Shipping for all Order of $99</li>
-                            </ul>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -109,7 +105,7 @@
                     <nav class="header__menu">
                         <ul>
                             <li><a href="../user_controller/home">Home</a></li>
-                            <li><a href="./shop-grid.html">Shop</a></li>
+                            <li><a href="../user_controller/all_tour">More Tour</a></li>
                             <li><a href="../user_controller/history">History</a></li>
                             <li><a href="../user_controller/contact">Contact</a></li>
                         </ul>
@@ -117,7 +113,7 @@
                 </div>
                 <div class="col-lg-3" style="margin-top:1rem;">
                     <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
+                                <img src="https://get.pxhere.com/photo/avatar-people-person-business-user-man-character-set-icon-portrait-office-profile-pictograph-social-adult-suit-technology-individual-head-face-design-concept-emblem-symbol-smile-formal-elements-facial-expression-cartoon-male-forehead-cheek-chin-human-behavior-standing-gentleman-businessperson-mouth-clip-art-communication-conversation-public-speaking-finger-illustration-facial-hair-happiness-organization-graphics-1447663.jpg">
                             </div>
                             <div class="hero__search__phone__text">
                                 <a href="../user_controller/user_detail" style="text-decoration: none;color: black;"><?php echo 'Welcome '.$_SESSION['name']; ?></a>
@@ -140,9 +136,13 @@
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
-                            
+                            <span>Featured destination</span>
                         </div>
-                        
+                        <ul>
+                            <li><a href="../user_controller/search_hanoi">Hà Nội</a></li>
+                            <li><a href="../user_controller/search_tphcm">TP.Hồ Chí Minh</a></li>
+                            <li><a href="../user_controller/search_danang">Đà Nẵng</a></li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-lg-9">
@@ -153,22 +153,11 @@
                                 <button type="submit" class="site-btn">SEARCH</button>
                             </form>
                         </div>
-                        <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
-                            </div>
-                        </div>
                     </div>
-                    <div class="hero__item set-bg" data-setbg="img/hero/banner.jpg">
-                        <div class="hero__text">
-                            <span>FRUIT FRESH</span>
-                            <h2>Vegetable <br />100% Organic</h2>
-                            <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
+                    <div data-setbg="img/hero/banner.jpg">
+                        <img style="width: 71.7%; padding-bottom: 10px;" src="https://mona.media/wp-content/uploads/2019/10/thiet-ke-phan-mem-quan-ly-du-lich.jpg">
+                        <div class="hero__text" style="margin-left: 27.5%;">
+                            <a href="../user_controller/all_tour" class="primary-btn">SHOP NOW</a>
                         </div>
                     </div>
                 </div>
