@@ -231,5 +231,11 @@ class User_controller extends CI_Controller{
 		$data['ds'] = $result;
 		$this->load->view('more_tour', $data);
 	}
+
+	public function tour_delete($tour_id){
+		$this->load->model('user_model');
+		$this->user_model->tour_delete($tour_id);
+		$this->load->view('tour_delete');
+	}
 }
 ?>

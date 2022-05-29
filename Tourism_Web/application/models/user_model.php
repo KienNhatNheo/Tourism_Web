@@ -153,7 +153,7 @@ class User_model extends CI_Model{
 	public function return_tour_history(){
 		$query = $this->db->query("select user_id from user_table where username = '".$_SESSION['name']."'");
 		foreach($query->result() as $item){
-			$query1 = $this->db->query("select th.tour_id,th.tour_startday,th.order_time,t.tour_name from tour_history as th, tour as t where th.user_id = ".$item->user_id." and t.tour_id = th.tour_id");
+			$query1 = $this->db->query("select th.tour_id,th.tour_startday,th.order_time,t.tour_name from tour_history as th, tour as t where th.user_id = ".$item->user_id." and t.tour_id = th.tour_id order by th.order_time desc");
 			return $query1->result();
 		}
 	}
@@ -204,6 +204,13 @@ class User_model extends CI_Model{
 	public function search_danang(){
 		$query = $this->db->query("select * from tour where tour_route like '%Đà Nẵng%'");
 		return $query->result();
+	}
+
+	public function tour_delete($tour_id){
+		$query = $this->db->query("select user_id from user_table where username = '".$_SESSION['name']."'");
+			foreach($query->result() as $item){
+				$query1 = $this->db->query("delete from tour_history where user_id = ".$item->user_id." and tour_id = ".$tour_id);
+			}	
 	}
 }
 ?>
