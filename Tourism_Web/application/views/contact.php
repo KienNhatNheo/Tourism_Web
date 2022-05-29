@@ -153,7 +153,7 @@
                     <div class="breadcrumb__text" >
                         <h2 style="color:pink">Contact Us</h2>
                         <div class="breadcrumb__option">
-                            <a style="color:pink" href="./index.html">Home</a>
+                            <a style="color:pink" href="./home">Home</a>
                             <span style="color:pink">Contact Us</span>
                         </div>
                     </div>
@@ -171,14 +171,14 @@
                     <div class="contact__widget">
                         <span class="icon_phone"></span>
                         <h4>Phone</h4>
-                        <p>+01-3-8888-6868</p>
+                        <p>+84912-345-678</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 text-center">
                     <div class="contact__widget">
                         <span class="icon_pin_alt"></span>
                         <h4>Address</h4>
-                        <p>60-49 Road 11378 New York</p>
+                        <p>Phenikaa University, Yen Nghia, Ha Dong</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 text-center">
@@ -192,7 +192,7 @@
                     <div class="contact__widget">
                         <span class="icon_mail_alt"></span>
                         <h4>Email</h4>
-                        <p>hello@colorlib.com</p>
+                        <p>phenikaa@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -209,8 +209,8 @@
             <div class="inside-widget">
                 <h4>Trường Đại học Phenikaa</h4>
                 <ul>
-                    <li>SĐT: +12344567</li>
-                    <li>Địa chỉ: Yên Nghĩa, Hà Đông, Hà Nội</li>
+                    <li>SĐT: +84912345678</li>
+                    <li>Địa chỉ:Đại học Phenikaa, Yên Nghĩa, Hà Đông, Hà Nội</li>
                 </ul>
             </div>
         </div>

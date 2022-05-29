@@ -5,16 +5,23 @@
 	<h1><?php
 	foreach($tour_feedback as $item){
 		echo 'Đánh giá về tour : '.$item->tour_name.'<br>';
-	}
-	?></h1>
-	<table style="margin-top: 40px; border-collapse: collapse;" border="1">
+		if($item->tour_name != null){
+			echo '<table style="margin-top: 40px; border-collapse: collapse;" border="1">
 	<tr style="padding:5px">
 		<th style="padding:5px">Tên Người Dùng</th>
 		<th style="padding:5px">Họ Tên</th>
 		<th style="padding:5px">Số điểm đánh giá</th>
 		<th style="padding:5px">Đánh giá</th>
-	</tr>
+	</tr>';
+		}
+		break;
+	}
+	?></h1>
+	
 	<?php
+	if($tour_feedback == null){
+		echo '<h2 style = "text-align:center">Không có đánh giá nào !</h2>';	
+	}
 	foreach($tour_feedback as $item){
 		echo '
 			<tr>
