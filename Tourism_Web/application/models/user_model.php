@@ -153,14 +153,14 @@ class User_model extends CI_Model{
 	public function return_tour_history(){
 		$query = $this->db->query("select user_id from user_table where username = '".$_SESSION['name']."'");
 		foreach($query->result() as $item){
-			$query1 = $this->db->query("select th.tour_id,th.tour_startday,th.order_time,t.tour_name from tour_history as th, tour as t where th.user_id = ".$item->user_id." and t.tour_id = th.tour_id order by th.order_time desc");
+			$query1 = $this->db->query("select th.tour_id,th.tour_startday,th.order_time,t.tour_name from tour_history as th, tour as t where th.user_id = ".$item->user_id." and t.tour_id = th.tour_id order by th.tour_startday desc");
 			return $query1->result();
 		}
 	}
 
 	//Tìm kiếm nơi bắt đầu
 	public function search_start_place($place){
-		$query = $this->db->query("select * from tour where tour_route like '%".$place."'");
+		$query = $this->db->query("select * from tour where tour_route like '%".$place."%'");
 		return $query->result();
 	}
 
